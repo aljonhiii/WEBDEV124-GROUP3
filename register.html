@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Barangay Connect</title>
+    <link rel="stylesheet" href="register.css">
+    
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+    <a href="../register.html" class="logo">
+        <span class="logo-box">iM</span>
+        <span class="logo-text">ISSUE</span>
+    </a>
+</header>
+
+<main class="main">
+<div class="container">
+
+    <div class="title">
+        <h1>Sign Up</h1>
+        <p id="subtitleText">Create your secure barangay account.</p>
+    </div>
+
+    <div id="server_error" class="error-box"></div>
+
+    <div class="steps" id="stepIndicators">
+        <div id="step-indicator-1" class="step active"></div>
+        <div id="step-indicator-2" class="step"></div>
+        <div id="step-indicator-3" class="step"></div>
+        <div id="step-indicator-4" class="step"></div>
+    </div>
+
+<form id="registerForm">
+
+<!-- STEP 1 -->
+<div id="step1" class="step-content">
+<h2>Step 1: Personal Identity</h2>
+
+<input type="text" id="last_name" placeholder="Last Name" required>
+<input type="text" id="first_name" placeholder="First Name" required>
+<input type="text" id="middle_name" placeholder="Middle Name (Optional)">
+<input type="date" id="birthday" required>
+
+<button type="button" onclick="nextStep(1)">Next</button>
+</div>
+
+<!-- STEP 2 -->
+<div id="step2" class="step-content hidden">
+<h2>Step 2: Residency & Contact</h2>
+
+<select id="purok" required>
+<option value="">Select Purok</option>
+<option>Purok 1</option>
+<option>Purok 2</option>
+</select>
+
+<input type="text" id="street" placeholder="Street (Optional)">
+<input type="tel" id="phone_number" placeholder="+63" required>
+
+<button type="button" onclick="prevStep(2)">Back</button>
+<button type="button" onclick="nextStep(2)">Next</button>
+</div>
+
+<!-- STEP 3 -->
+<div id="step3" class="step-content hidden">
+<h2>Step 3: Account Security</h2>
+
+<input type="email" id="email" placeholder="Email" required>
+<input type="password" id="reg_password" placeholder="Password" required>
+<input type="password" id="confirm_password" placeholder="Confirm Password" required>
+
+<button type="button" onclick="prevStep(3)">Back</button>
+<button type="button" onclick="simulateSendOTP()">Continue</button>
+</div>
+
+<!-- STEP 4 -->
+<div id="step4" class="step-content hidden text-center">
+<h2>Verify Email</h2>
+
+<input type="text" id="otp_input" maxlength="6" placeholder="------">
+
+<button type="submit">Verify & Create Account</button>
+<button type="button" onclick="prevStep(4)">Back</button>
+</div>
+
+</form>
+
+</div>
+</main>
+
+<footer class="footer">
+<p>Barangay System</p>
+</footer>
+
+</body>
+<script src="register.js"></script>
+<script src="../database.js"></script>
+</html>
