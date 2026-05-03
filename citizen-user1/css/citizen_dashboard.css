@@ -1,0 +1,66 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Tag animation */
+.tag-enter {
+    animation: tagPop 0.2s ease-out forwards;
+}
+
+@keyframes tagPop {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Map z-index adjustments */
+#incidentMap {
+    z-index: 10;
+}
+
+/* Fullscreen map mode */
+.map-fullscreen {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 100 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Purok labels */
+.purok-label {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-weight: 800;
+    color: #1e293b;
+    text-shadow: 2px 2px 4px white, -2px -2px 4px white;
+    font-size: 12px;
+}
